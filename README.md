@@ -1,46 +1,61 @@
-# 🏗️ Module 09 Mini-Project: Complete Fetch Requests for Existing Application
+# National Park API
 
-In this mini-project, you'll work with a group to complete `fetch` requests for an existing application. You'll create `fetch` requests to get national park information and events, based on an inputted state, as well as requests to add and remove search history.  
+## Description
 
-* As a user, I want to see nearby national parks and events when I search by state.
+This project is a web application that allows users to search for national parks and events based on a state they input. When a user enters the name of a state, the application makes a request to the National Park Service API to fetch a list of national parks and events in that state. The fetched data is then displayed on the page for the user to view.
 
-* As a user, I want my previous searches to be displayed.
+Additionally, the application keeps track of the user's previous searches, displaying them as clickable buttons. When a user clicks on a previous search, the parks and events for that state are displayed again. Users can also remove a state from their search history by clicking the trash can icon next to it.
 
-* As a user, when I click on a previously searched state, I want to see national parks and events in that state.
+The application is built using Express for the server-side logic and uses the Fetch API to make asynchronous requests to the National Park Service API. The application also relies on environment variables to securely store the API key needed to make requests to the National Park Service API.
 
-* As a user, I want to be able to remove previously searched states from my search history.  
+By working with the Fetch API, server-side routes, and dynamic data management, this project helps users interact with real-time national park information while providing a smooth and dynamic user experience.
 
-## Acceptance Criteria
+## Table of Contents
 
-* It's done when I submit the form with the name of a state and nearby national parks and events display on the page.
+- [Usage](#usage)
+- [Instructions](#instructions)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Additional Resources](#additional-resources)
 
-* It's done when I load the page and my previous searches load as buttons.
+## Usage
 
-* It's done when I click on a previous search button and national parks and events in that state display on the page.
+The application is invoked by using the following commands:
 
-* It's done when I click on the delete icon (trash can) next to a previously searched state and that state is removed from the search history.
+```
+npm install
+npm run build
+npm run start:dev
+```
 
-## Additional Requirements
+## Instructions
 
-* This application requires environment variables to function properly. You'll need to rename the `.env.example` file to `.env`.
+1. Clone the repository to your local machine.
+2. Navigate to the project folder in your terminal.
+3. Run `npm install` to install all required dependencies.
+4. Make sure to rename `.env.example` to `.env` and add your `API_KEY` from the [National Park Service API](https://www.nps.gov/subjects/developer/get-started.htm) as the `API_KEY` value.
+5. Start the application by running `npm start`.
+6. Visit the application in your browser, input a state, and see national parks and events displayed on the page.
+7. View and click on previously searched states to see their national parks and events.
 
-* Additionally, you'll need an API key from the [National Park Service API](https://www.nps.gov/subjects/developer/get-started.htm). Once you've obtained that key, add it to the `.env` file as the `API_KEY` value.
+## Key Features
 
-* The server-side of this application is provided. Familiarize yourself with the provided server and routes before writing your code.
+- Fetch national parks and events based on user-provided state.
+- Display previous search history as clickable buttons.
+- Remove previously searched states from history with a trash can icon.
 
----
+## Technology Stack:
 
-## 📝 Notes
+This application needs the following tools and technologies to operate:
 
-Refer to the documentation:
+- **JavaScript**: For handling the client-side functionality and dynamic content.
+- **Express**: The server-side framework used to handle requests and manage API communication.
+- **Fetch API**: For making asynchronous requests to fetch national parks and event data.
+- **HTML/CSS**: To structure and style the application interface.
+- **Node.js**: The runtime environment for running JavaScript on the server.
+- **dotenv**: To manage environment variables securely.
 
-* [The Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+## Additional Resources
 
-## 💡 Hints
-
-* How can we test Express routes without a front-end application?
-
-* Which HTTP methods would be appropriate for the requested functionality?
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+* [The Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch): Documentation for understanding and using the Fetch API.
+* [National Park Service API](https://www.nps.gov/subjects/developer/get-started.htm): API documentation to get your API key and learn how to interact with the National Park Service data.

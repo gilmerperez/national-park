@@ -1,10 +1,18 @@
 [
-  {
-    "name": "Alaska",
-    "id": "72e89d34-015c-4524-9e9f-3200746d53ea"
-  },
-  {
-    "name": "Hawaii",
-    "id": "482cba42-0126-4c3b-b359-88497fac81a4"
-  }
+	{
+		"name": "Alaska",
+		"id": "72e89d34-015c-4524-9e9f-3200746d53ea"
+	},
+	{
+		"name": "Hawaii",
+		"id": "482cba42-0126-4c3b-b359-88497fac81a4"
+	},
+	{
+		"name": "Florida",
+		"id": "c5f56d1c-ceeb-4964-bb19-5c87444ba1a3"
+	},
+	{
+		"name": "Alabama",
+		"id": "65ff43a6-b6b2-46ba-b076-5a4508aa2925"
+	}
 ]
