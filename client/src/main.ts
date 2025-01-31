@@ -75,14 +75,25 @@ const deledStateFromHistory = async (id: string) => {
 // * Function to get future events by state
 const getEventsByState = async (state: string) => {
   //TODO: update this function to take in a state and fetch all events happening in national parks in that state. Return the resulting array of events.
-  console.log('complete the `getEventsByState` function in client/src/main.ts');
+  try {
+    const response = await fetch(`/api/parks/events/${state}`);
+    const events = await response.json();
+    console.log('Events:', events);
+    return events;
+  } catch (err) {
+    console.log('Error:', err);
+    return err;
+  }
 };
 
 // * Function to get saved searches
 const getHistory = async () => {
+  //TODO: update this function to fetch all previously searched states. Return the resulting array of states.
   try {
-    //TODO: update this function to fetch all previously searched states. Return the resulting array of states.
-    console.log('complete the `getHistory` function in client/src/main.ts');
+    const response = await fetch(`/api/history`);
+    const history = await response.json();
+    console.log('History:', history);
+    return history;
   } catch (err) {
     console.log('Error:', err);
     return err;
