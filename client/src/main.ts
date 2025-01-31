@@ -45,19 +45,16 @@ interface State {
   name: string;
 }
 
-/*
-
-API Calls
-
-*/
+/* API Calls */
 
 // * Function to get parks by state
 const getParksByState = async (state: string) => {
+  //TODO: update this function to take in the name of a state and fetch all national parks in that state.  Return the resulting array of parks.
   try {
-    //TODO: update this function to take in the name of a state and fetch all national parks in that state.  Return the resulting array of parks.
-    console.log(
-      'complete the `getParksByState` function in client/src/main.ts'
-    );
+    const response = await fetch(`/api/parks/${state}`);
+    const parks = await response.json();
+    console.log('Parks:', parks);
+    return parks;
   } catch (err) {
     console.log('Error:', err);
     return err;
@@ -65,21 +62,23 @@ const getParksByState = async (state: string) => {
 };
 
 //*Function to delete state from history
-const deletedStateFromHistory = async (id: string) => {
+const deledStateFromHistory = async (id: string) => {
   //TODO: update this function to take in the id of a saved state and delete that state from search history.
-  console.log(
-    'complete the `deleteStateFromHistory` function in client/src/main.ts'
-  );
+  await fetch(`/api/history/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 };
 
 // * Function to get future events by state
-
 const getEventsByState = async (state: string) => {
   //TODO: update this function to take in a state and fetch all events happening in national parks in that state. Return the resulting array of events.
   console.log('complete the `getEventsByState` function in client/src/main.ts');
 };
-// * Function to get saved searches
 
+// * Function to get saved searches
 const getHistory = async () => {
   try {
     //TODO: update this function to fetch all previously searched states. Return the resulting array of states.
@@ -89,14 +88,10 @@ const getHistory = async () => {
     return err;
   }
 };
-/*
 
-Render Functions
-
-*/
+/* Render Functions */
 
 // * Function to render parks
-
 const renderParks = (parks: Park[]) => {
   parksContainer.innerHTML = '';
 
@@ -107,7 +102,6 @@ const renderParks = (parks: Park[]) => {
 };
 
 // * Function to render events
-
 const renderEvent = (event: ParkEvent) => {
   eventsContainer.innerHTML = '';
 
@@ -145,14 +139,9 @@ const getAndRenderHistory = async () => {
   }
 };
 
-/*
-
-Helper Functions
-
-*/
+/* Helper Functions */
 
 // * Function to create the park cards
-
 const createParkCard = (park: Park) => {
   const parkCard = document.createElement('div');
   parkCard.classList.add('card', 'mb-3', 'card-rounded');
@@ -208,7 +197,6 @@ const createCardColumn = () => {
 };
 
 // * Function to create the event HTML
-
 const createEventHTML = (parkEvent: ParkEvent) => {
   const eventHTML = `
     <div class="card-header">
@@ -227,7 +215,6 @@ const createEventHTML = (parkEvent: ParkEvent) => {
 };
 
 // * Functions to create previous search buttons
-
 const buildHistoryListItem = (state: State) => {
   const newBtn = createHistoryButton(state.name);
   const deleteBtn = createDeleteButton();
@@ -269,11 +256,7 @@ const createDeleteButton = () => {
   return delBtnEl;
 };
 
-/*
-
-Event Handlers
-
-*/
+/* Event Handlers */
 
 const handleSearchFormSubmit = async (event: Event) => {
   event.preventDefault();
@@ -321,11 +304,7 @@ const handleDeleteHistoryClick = (event: any) => {
   deletedStateFromHistory(stateId).then(getAndRenderHistory);
 };
 
-/*
-
-Initial Render
-
-*/
+/* Initial Render */
 
 searchForm.addEventListener('submit', handleSearchFormSubmit);
 searchHistoryContainer.addEventListener('click', handleSearchHistoryClick);
