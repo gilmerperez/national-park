@@ -312,7 +312,7 @@ const handleDeleteHistoryClick = (event: any) => {
   event.stopPropagation();
   const stateId = JSON.parse(event.target.getAttribute('data-state')).id;
   console.log(stateId);
-  deletedStateFromHistory(stateId).then(getAndRenderHistory);
+  deledStateFromHistory(stateId).then(getAndRenderHistory);
 };
 
 /* Initial Render */
