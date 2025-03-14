@@ -1,6 +1,6 @@
 # National Park API
 
-## Description
+## Project Overview
 
 This project is a web application that allows users to search for national parks and events based on a state they input. When a user enters the name of a state, the application makes a request to the National Park Service API to fetch a list of national parks and events in that state. The fetched data is then displayed on the page for the user to view.
 
@@ -22,7 +22,7 @@ By working with the Fetch API, server-side routes, and dynamic data management, 
 
 The application is invoked by using the following commands:
 
-```
+```bash
 npm install
 npm run build
 npm run start:dev
@@ -33,29 +33,31 @@ npm run start:dev
 1. Clone the repository to your local machine.
 2. Navigate to the project folder in your terminal.
 3. Run `npm install` to install all required dependencies.
-4. Make sure to rename `.env.example` to `.env` and add your `API_KEY` from the [National Park Service API](https://www.nps.gov/subjects/developer/get-started.htm) as the `API_KEY` value.
-5. Start the application by running `npm start`.
+4. Make sure to add your API KEy to the `.env` file from the [National Park Service API](https://www.nps.gov/subjects/developer/get-started.htm) as the `API_KEY` value.
+5. Start the application by running `npm run start:dev`.
 6. Visit the application in your browser, input a state, and see national parks and events displayed on the page.
 7. View and click on previously searched states to see their national parks and events.
 
 ## Key Features
 
-- Fetch national parks and events based on user-provided state.
 - Display previous search history as clickable buttons.
+- Fetch national parks and events based on user-provided state.
 - Remove previously searched states from history with a trash can icon.
 
 ## Technology Stack:
 
 This application needs the following tools and technologies to operate:
-
-- **JavaScript**: For handling the client-side functionality and dynamic content.
-- **Express**: The server-side framework used to handle requests and manage API communication.
-- **Fetch API**: For making asynchronous requests to fetch national parks and event data.
+- **dotenv**: To manage environment variables securely.
 - **HTML/CSS**: To structure and style the application interface.
 - **Node.js**: The runtime environment for running JavaScript on the server.
-- **dotenv**: To manage environment variables securely.
+- **JavaScript**: For handling the client-side functionality and dynamic content.
+- **Fetch API**: For making asynchronous requests to fetch national parks and event data.
+- **Express**: The server-side framework used to handle requests and manage API communication.
+
 
 ## Additional Resources
 
-* [The Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch): Documentation for understanding and using the Fetch API.
-* [National Park Service API](https://www.nps.gov/subjects/developer/get-started.htm): API documentation to get your API key and learn how to interact with the National Park Service data.
+API Documentation to get your [National Park Service API Key](https://www.nps.gov/subjects/developer/get-started.htm)
+
+Documentation For understanding and using [The Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
